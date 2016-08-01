@@ -1,5 +1,5 @@
 var gcd = function(a, b) {
-    if(b == 0) {
+    if(b === 0) {
         return a;
     }
 
@@ -24,7 +24,7 @@ var reduceFraction = function(fraction) {
         numerator: numerator,
         denominator: denominator
     };
-}
+};
 
 var fractionReplacements = {
     "1/4" : "¼",
@@ -51,7 +51,7 @@ var cleanupFraction = function(singleFractionString) {
 
     var cleanFraction = reduceFraction({ numerator: split[0], denominator: split[1] });
     var result = '';
-    if(cleanFraction.whole != 0) {
+    if(cleanFraction.whole !== 0) {
         result += cleanFraction.whole + ' ';
     }
 
@@ -62,7 +62,7 @@ var cleanupFraction = function(singleFractionString) {
       result += lookupKey;
     }
     return result;
-}
+};
 
 var replaceFractions = function(node) {
     // If this is not a text node, keep recursing
@@ -72,4 +72,4 @@ var replaceFractions = function(node) {
     }
 
     node.textContent = node.textContent.replace(/\d+\s*\/\s*\d+/, cleanupFraction);
-}
+};
