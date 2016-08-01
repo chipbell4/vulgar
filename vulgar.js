@@ -1,3 +1,5 @@
+var Vulgar = (function() {
+
 var gcd = function(a, b) {
     if(b === 0) {
         return a;
@@ -73,3 +75,9 @@ var replaceFractions = function(node) {
 
     node.textContent = node.textContent.replace(/\d+\s*\/\s*\d+/, cleanupFraction);
 };
+
+return {
+  replace: replaceFractions
+};
+
+})();
